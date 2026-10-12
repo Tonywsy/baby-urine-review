@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-page-node-id="xEnMmPa2rhkwIrnx02JC8V">
-<head data-page-node-id="CHHAyz6IyhLYsXAGYmAaqN">
-<meta charset="UTF-8" data-page-node-id="q5nGOKpZA54epFCvAdeHiX">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="fHetyuBPtLPsSsutVmoSi6">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>0-1岁宝宝一天尿量</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,22 +12,30 @@
     color: #3A3330;
     display: flex;
     justify-content: center;
-    padding: 24px 12px;
+    padding: 18px;
   }
   .card {
-    width: 375px;
-    background: #FFFFFF;
-    border-radius: 24px;
+    width: 1180px;
+    background: #FFF3EB;
+    border-radius: 18px;
     box-shadow: 0 8px 30px rgba(255, 138, 101, .18);
-    overflow: hidden;
     border: 1px solid #FFE3D3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
   }
   .head {
+    grid-column: 1 / -1;
     background: linear-gradient(135deg, #FF8A65, #FF7043);
     color: #fff;
-    padding: 22px 22px 18px;
+    border-radius: 14px;
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .head .tag {
+  .head-l .tag {
     display: inline-block;
     font-size: 12px;
     background: rgba(255,255,255,.22);
@@ -35,24 +43,32 @@
     border-radius: 20px;
     margin-bottom: 10px;
   }
-  .head h1 { font-size: 22px; line-height: 1.3; font-weight: 800; }
-  .head p { font-size: 13px; opacity: .92; margin-top: 6px; }
-  .sec { padding: 16px 20px; }
+  .head-l h1 { font-size: 28px; line-height: 1.25; font-weight: 800; }
+  .head-r { text-align: right; }
+  .head-r p { font-size: 14px; opacity: .95; line-height: 1.6; }
+  .head-r .sub { font-size: 13px; opacity: .85; margin-top: 4px; }
+  .sec {
+    background: #FFFFFF;
+    border: 1px solid #FFE3D3;
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .sec.full { grid-column: 1 / -1; }
   .sec-title {
-    font-size: 15px; font-weight: 800; color: #E64A19;
+    font-size: 16px; font-weight: 800; color: #E64A19;
     margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
   }
-  .sec-title::before { content:""; width: 5px; height: 16px; background:#FF7043; border-radius:3px; display:inline-block; }
+  .sec-title::before { content:""; width: 5px; height: 17px; background:#FF7043; border-radius:3px; display:inline-block; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th, td { padding: 8px 6px; text-align: center; border-bottom: 1px solid #F1E6DF; }
+  th, td { padding: 7px 6px; text-align: center; border-bottom: 1px solid #F1E6DF; }
   th { background: #FFF1EA; color: #BF360C; font-weight: 700; }
   td:first-child, th:first-child { text-align: left; }
-  .note { font-size: 12px; color: #8A7B73; margin-top: 8px; line-height: 1.5; }
+  .note { font-size: 12.5px; color: #8A7B73; margin-top: 8px; line-height: 1.55; }
   .red { color: #D84315; font-weight: 700; }
-  .src { font-size: 10.5px; color: #B08A7A; margin-top: 6px; line-height: 1.45; border-left: 2px solid #FFCCBC; padding-left: 7px; }
+  .src { font-size: 10.5px; color: #B08A7A; margin-top: 7px; line-height: 1.5; border-left: 2px solid #FFCCBC; padding-left: 7px; }
   .src b { color: #8D6E63; }
   .intl { background: #EAF3FF; border: 1px solid #C5DCF5; border-radius: 12px; padding: 11px 12px; margin-top: 8px; }
-  .intl .it { font-size: 11.5px; color: #1A5276; line-height: 1.5; }
+  .intl .it { font-size: 11.5px; color: #1A5276; line-height: 1.55; }
   .intl .it b { color: #0B5394; }
   .signals { display: flex; flex-direction: column; gap: 8px; }
   .sig {
@@ -62,154 +78,167 @@
   .myth { display: flex; flex-direction: column; gap: 8px; }
   .m {
     background: #FFF6F4; border: 1px solid #FFD9CC; border-radius: 12px;
-    padding: 10px 12px; font-size: 12.5px; line-height: 1.5;
+    padding: 10px 12px; font-size: 12.5px; line-height: 1.55;
   }
   .m b { color: #D84315; }
   .foot {
-    padding: 14px 20px 20px; font-size: 11px; color: #A89A92; line-height: 1.6;
-    background: #FCF6F1; border-top: 1px solid #F1E6DF;
+    grid-column: 1 / -1;
+    padding: 13px 20px; font-size: 11px; color: #A89A92; line-height: 1.6;
+    background: #FCF6F1; border: 1px solid #F1E6DF; border-radius: 14px;
   }
   .foot b { color: #8A7B73; }
-  .reflist { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+  /* 来源清单：国内/国际双栏 */
+  .srccols { display: flex; gap: 28px; }
+  .srccol { flex: 1; min-width: 0; }
+  .reflist { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
   .ref { font-size: 11.5px; line-height: 1.5; color: #5A4F49; word-break: break-word; }
   .ref a { color: #E64A19; text-decoration: none; border-bottom: 1px solid #FFB79E; }
   .ref a:hover { color: #BF360C; }
   .ref .tag { display: inline-block; font-size: 10px; background: #FFE9E0; color: #D84315; padding: 1px 6px; border-radius: 8px; margin-right: 5px; vertical-align: middle; }
   .ref .tag-i { background: #E3F0FF; color: #0B5394; }
-  .subhead { font-size: 12.5px; font-weight: 700; color: #8D6E63; margin: 12px 0 2px; }
+  .subhead { font-size: 13px; font-weight: 700; color: #8D6E63; margin: 12px 0 2px; }
 </style>
 </head>
-<body data-page-node-id="ZPBAPXZRAnE19HQLjc7jBS">
-<div class="card" data-page-node-id="qvCWaFWluRKBmrPULy37Rg">
-  <div class="head" data-page-node-id="SeJ9GapehkpM6xY2wwbseA">
-    <span class="tag" data-page-node-id="IQJ69ODByR4zDRwsXPbB9r">硬核数据派 · 葵爸母婴科普</span>
-    <h1 data-page-node-id="AaeGTrACl4Tq3MCSiO7MzZ">0-1 岁宝宝<br data-page-node-id="RvGLvC4OX5FRhAA8LFkTkE">一天尿量到底多少？</h1>
-    <p data-page-node-id="1mer55k7iWsg6sBznbMcj2">国内三甲 × 国际权威 · 双向证实<br>先搞清"一天才多少"，再看穿"吸量焦虑"</p>
+<body>
+<div class="card">
+  <div class="head">
+    <div class="head-l">
+      <span class="tag">硬核数据派 · 葵爸母婴科普</span>
+      <h1>0-1 岁宝宝一天尿量到底多少？</h1>
+    </div>
+    <div class="head-r">
+      <p>国内三甲 × 国际权威 · 双向证实</p>
+      <p class="sub">先搞清"一天才多少"，再看穿"吸量焦虑"</p>
+    </div>
   </div>
 
-  <div class="sec" data-page-node-id="WQgMrE6r3o3wn1gKkPfSC6">
-    <div class="sec-title" data-page-node-id="azdxyciAYTBABcgpVFXGx6">新生儿期（0-28 天）尿量阶梯</div>
-    <table data-page-node-id="0mhGyDSAB3iUHDPDZPwpWz">
-      <tr data-page-node-id="eRe4EHcicztKhadyWs6TI9"><th data-page-node-id="zFXcoz2MmmwsFGcfIVZWMW">日龄</th><th data-page-node-id="bF477dUCUwEmHrYrND8u0w">全天尿量</th><th data-page-node-id="3m32GoRHAPIZEIngSz3zTk">次数</th></tr>
-      <tr data-page-node-id="js3P974PYvevBFJHQzErk8"><td data-page-node-id="kD82opzSMIP7WsEGETKJr4">第 1 天</td><td data-page-node-id="6kiYTAhtGufS54vtrLGlWd">20-60 ml</td><td data-page-node-id="yaOpNszYpTote1U6FdKHAr">1-2 次</td></tr>
-      <tr data-page-node-id="hm6byDKISShwoYJIuRtHgM"><td data-page-node-id="Xww0hwBITghrQFy2sMUolP">第 2 天</td><td data-page-node-id="BSfkVykE5IOhMX0pZbnrpr">80-140 ml</td><td data-page-node-id="TQc8Eq7wDPNqD6n7vthQ4F">2-3 次</td></tr>
-      <tr data-page-node-id="ZklMIKphNuDf2mbiVvSUbD"><td data-page-node-id="JckAEzYHRcy3G4UzOVRbuF">第 3 天</td><td data-page-node-id="WvHGiJ8BmDtml1DiyXt6mG">100-300 ml</td><td data-page-node-id="BpDPpuT9qpY315mdZXSWfb">3-5 次</td></tr>
-      <tr data-page-node-id="HKG78hR1oFFYANqvEsKDWS"><td data-page-node-id="cFA1LDvFpq2wTZYg2LPNvR">第 4 天-满月</td><td data-page-node-id="DwRvrvAxX4rZmfDS4KV8mt">250-400 ml</td><td data-page-node-id="nZEilPcaM8pW953Xv3ioxH">6-8 次+</td></tr>
+  <div class="sec">
+    <div class="sec-title">新生儿期（0-28 天）尿量阶梯</div>
+    <table>
+      <tr><th>日龄</th><th>全天尿量</th><th>次数</th></tr>
+      <tr><td>第 1 天</td><td>20-60 ml</td><td>1-2 次</td></tr>
+      <tr><td>第 2 天</td><td>80-140 ml</td><td>2-3 次</td></tr>
+      <tr><td>第 3 天</td><td>100-300 ml</td><td>3-5 次</td></tr>
+      <tr><td>第 4 天-满月</td><td>250-400 ml</td><td>6-8 次+</td></tr>
     </table>
-    <p class="note" data-page-node-id="s2LARLst9xWDhMrfhZB4CY">按体重算：正常 <b data-page-node-id="GpBeies6bdbCezpph8M4bx">1-3 ml/kg/小时</b>。<span class="red" data-page-node-id="TCTzER6UA27PKt49OH9rMR">红线：出生 48 小时仍无尿需警惕。</span></p>
-    <p class="src" data-page-node-id="YEOR844kU0pM0Vt9NfaayQ">
-      <b data-page-node-id="n04mPjeSjdhOlClIuHEzIL">国内来源：</b>博禾医生；民福康·张知新（中日友好医院）；王玉玮（山东大学齐鲁医院）；王昌燕（西电集团医院新生儿科）；三九益生通·王萍（广州市妇女儿童医疗中心）。
+    <p class="note">按体重算：正常 <b>1-3 ml/kg/小时</b>。<span class="red">红线：出生 48 小时仍无尿需警惕。</span></p>
+    <p class="src">
+      <b>国内来源：</b>博禾医生；民福康·张知新（中日友好医院）；王玉玮（山东大学齐鲁医院）；王昌燕（西电集团医院新生儿科）；三九益生通·王萍（广州市妇女儿童医疗中心）。
     </p>
-    <div class="intl" data-page-node-id="6TJaxxGgvl45eZyWTGiMFH">
-      <div class="it" data-page-node-id="AvGvXuOttW9FJwQXSnFHv4"><b data-page-node-id="AbZmHKKTR9EwDxKxrzeTcE">🌍 国际对照：</b>NCBI/StatPearls《Fluid Management》——新生儿出生 1 天后最低尿量 <b data-page-node-id="JFdN4N35I5SV7oW3HzA225">≥2 mL/kg/h</b>；儿科重症医学教材（Fuhrman & Zimmerman 等）——正常水合婴儿 <b data-page-node-id="hnN7klGRDT9HT2y6AaW9Dy">≥1.5–2.0 mL/kg/h</b>。与国内 1–3 mL/kg/h 区间重合 ✅</div>
+    <div class="intl">
+      <div class="it"><b>🌍 国际对照：</b>NCBI/StatPearls《Fluid Management》——新生儿出生 1 天后最低尿量 <b>≥2 mL/kg/h</b>；儿科重症医学教材（Fuhrman & Zimmerman 等）——正常水合婴儿 <b>≥1.5–2.0 mL/kg/h</b>。与国内 1–3 mL/kg/h 区间重合 ✅</div>
     </div>
   </div>
 
-  <div class="sec" data-page-node-id="FfalsfbwPQPxoDWsWJf6IT">
-    <div class="sec-title" data-page-node-id="pKcOGTR9BBQI2d3xU0YI86">满月后到 1 岁</div>
-    <table data-page-node-id="JnWutuzm0Xjwzn1aVnxCEZ">
-      <tr data-page-node-id="qTm1232R1ujOUosfJu0Bzx"><th data-page-node-id="kihCg56FaZfG5IUtKQ9g0R">阶段</th><th data-page-node-id="JXyStEwBUE9hFf7vbOrK31">全天总尿量</th><th data-page-node-id="gDPhx0EdbtFr3gdJ3H8STm">单次尿量</th></tr>
-      <tr data-page-node-id="lYlzaqO4kCPq4n4D5Vrymm"><td data-page-node-id="Kwa3mHyd8zNS0BCU73awbJ">1-6 个月</td><td data-page-node-id="Xj2U6STcqzRVYZ5zKx66O3">约 400-500 ml</td><td data-page-node-id="6X4YtkBNfLsC886cRQ0W21">30-60 ml</td></tr>
-      <tr data-page-node-id="iXr8NjUKAkj1r4OxHexm7V"><td data-page-node-id="ijD3cvoDWXvyvcnCCMslnd">6 个月-1 岁</td><td data-page-node-id="17tCPGntFOvSJHUiKErPpM">约 400-600 ml</td><td data-page-node-id="ENiM4EhybL7DXl6BaQkUx6">60-100 ml</td></tr>
-      <tr data-page-node-id="U9GjYiVUxyTcYIbFMP8LDo"><td data-page-node-id="9FxRWOzDc0w3YJYJqZnlpX">全天次数</td><td colspan="2" data-page-node-id="WHOtHQkfk3DHuHGHA25Sql">6-15 次</td></tr>
+  <div class="sec">
+    <div class="sec-title">满月后到 1 岁</div>
+    <table>
+      <tr><th>阶段</th><th>全天总尿量</th><th>单次尿量</th></tr>
+      <tr><td>1-6 个月</td><td>约 400-500 ml</td><td>30-60 ml</td></tr>
+      <tr><td>6 个月-1 岁</td><td>约 400-600 ml</td><td>60-100 ml</td></tr>
+      <tr><td>全天次数</td><td colspan="2">6-15 次</td></tr>
     </table>
-    <p class="note" data-page-node-id="JsSKVdYon1Ex3JS3Bb5Iwj">一句话：<b data-page-node-id="lpy2oSeu9OGWwLoh2iAuBd">一顿奶 ≈ 一次尿，勤得很。</b></p>
-    <p class="src" data-page-node-id="BEAo59P2TmhXoqlRiUgQMC">
-      <b data-page-node-id="U5rXoJUFSdiFqIkv4EEqPh">国内来源：</b>丁香医生；三九益生通·马颖（广州市妇女儿童医疗中心）；民福康·周艳梅（武汉大学人民医院）；百度健康（专家审阅）；王玉玮（山东大学齐鲁医院）。
+    <p class="note">一句话：<b>一顿奶 ≈ 一次尿，勤得很。</b></p>
+    <p class="src">
+      <b>国内来源：</b>丁香医生；三九益生通·马颖（广州市妇女儿童医疗中心）；民福康·周艳梅（武汉大学人民医院）；百度健康（专家审阅）；王玉玮（山东大学齐鲁医院）。
     </p>
   </div>
 
-  <div class="sec" data-page-node-id="3673Hiq1EbiuZQDFPW3IEx">
-    <div class="sec-title" data-page-node-id="XtGaOGCo1LDY1IlRMiMn90">喝够没？看 3 个信号</div>
-    <div class="signals" data-page-node-id="lJO7BIuQ40n4AWIdm8s1nL">
-      <div class="sig" data-page-node-id="uuTpFzJtisXxnfUBivuUhS">① 一天 6 片以上、沉甸甸的湿尿布</div>
-      <div class="sig" data-page-node-id="iJtqMLqDsfAG2nSm3RU1Ly">② 尿色淡黄、清亮透明</div>
-      <div class="sig" data-page-node-id="nW6H7N2nGXp5dFJgHimrun">③ 体重稳步增长</div>
+  <div class="sec">
+    <div class="sec-title">喝够没？看 3 个信号</div>
+    <div class="signals">
+      <div class="sig">① 一天 6 片以上、沉甸甸的湿尿布</div>
+      <div class="sig">② 尿色淡黄、清亮透明</div>
+      <div class="sig">③ 体重稳步增长</div>
     </div>
-    <p class="src" data-page-node-id="9uaFbfL13F8lNcDSv10kEj">
-      <b data-page-node-id="MasJoh1KcfrB9fF09OCRzV">国内来源：</b>博禾医生；三九益生通·王萍（每日 ≥6 块沉甸甸湿尿布为积极信号）；丁香医生（尿色淡黄清亮）。
+    <p class="src">
+      <b>国内来源：</b>博禾医生；三九益生通·王萍（每日 ≥6 块沉甸甸湿尿布为积极信号）；丁香医生（尿色淡黄清亮）。
     </p>
-    <div class="intl" data-page-node-id="28JHA5izBxjvYwvTGJELc2">
-      <div class="it" data-page-node-id="l35pY3EbCR0T4YNNk9GMSK"><b data-page-node-id="g9Dw96KaQKRj0MiusSUoOl">🌍 国际对照：</b>NCBI/StatPearls——婴儿出生 1 周后每天约 <b data-page-node-id="ycBDE3MRL6BNZX4AZiWecT">6 片湿尿布</b>；WHO 母乳喂养评估（香港卫生署引述）——第 5 天起每天最少 <b data-page-node-id="SKfvduIsMlSxBpG44t49G1">5–6 块相当重的湿尿片</b>。与"6 片以上沉甸甸"一致 ✅</div>
+    <div class="intl">
+      <div class="it"><b>🌍 国际对照：</b>NCBI/StatPearls——婴儿出生 1 周后每天约 <b>6 片湿尿布</b>；WHO 母乳喂养评估（香港卫生署引述）——第 5 天起每天最少 <b>5–6 块相当重的湿尿片</b>。与"6 片以上沉甸甸"一致 ✅</div>
     </div>
   </div>
 
-  <div class="sec" data-page-node-id="uZDhXVm5Xa8rHTItWFgkFn">
-    <div class="sec-title" data-page-node-id="rFrQtEVqjWn21rVKp6FFUa">辟谣三连</div>
-    <div class="myth" data-page-node-id="bWjTs9OIDfNxD1wjibT4Zt">
-      <div class="m" data-page-node-id="wwrUTuuJj0GSm9M10rjEDq"><b data-page-node-id="QsF9RESgLbPivvHycexIj9">❌ 尿黄 = 上火要喂水？</b><br data-page-node-id="m8Hs0OvQDE9MnlZkloy8Mv">6 个月内纯母乳不用额外喝水，尿黄多因出汗浓缩，补奶即可。</div>
-      <div class="m" data-page-node-id="9f5FRQV5GDnYwrDpUp18GD"><b data-page-node-id="Tdf5tsMd5Gn1wtD5DItFmy">❌ 尿布粉色 = 血尿？</b><br data-page-node-id="wTeQiTxrMFhVn1Rjw4Fi3b">是新生儿尿酸盐结晶（砖灰样），常见，多吃多排就好，不是血。</div>
-      <div class="m" data-page-node-id="FTzec8VYCHzdIzwUOlgAI6"><b data-page-node-id="HVqIn2iFwfvzGoo5beaXjL">❌ 尿多 = 肾不好？</b><br data-page-node-id="2rD1Yg9TgYb0FrepjCajrI">婴儿本就一天尿十几次，正常。</div>
+  <div class="sec">
+    <div class="sec-title">辟谣三连</div>
+    <div class="myth">
+      <div class="m"><b>❌ 尿黄 = 上火要喂水？</b><br>6 个月内纯母乳不用额外喝水，尿黄多因出汗浓缩，补奶即可。</div>
+      <div class="m"><b>❌ 尿布粉色 = 血尿？</b><br>是新生儿尿酸盐结晶（砖灰样），常见，多吃多排就好，不是血。</div>
+      <div class="m"><b>❌ 尿多 = 肾不好？</b><br>婴儿本就一天尿十几次，正常。</div>
     </div>
-    <p class="src" data-page-node-id="VsCCZYje1tM0YyWUz1kl5M">
-      <b data-page-node-id="DYdHZ5FdXmXVZs0K8nuc7n">国内来源：</b>百度健康（6 个月内纯母乳无需额外喂水）；儿科共识（新生儿尿酸盐结晶非血尿）；丁香医生（尿多若精神好可观察）。
+    <p class="src">
+      <b>国内来源：</b>百度健康（6 个月内纯母乳无需额外喂水）；儿科共识（新生儿尿酸盐结晶非血尿）；丁香医生（尿多若精神好可观察）。
     </p>
   </div>
 
-  <div class="sec" data-page-node-id="MYTH_ABSORB">
-    <div class="sec-title" data-page-node-id="MYTH_T">吸量测评避坑：倒一整瓶水 ≠ 真实带娃</div>
-    <p class="note" data-page-node-id="MYTH_N1">不少测评博主往尿不湿里<b>一口气倒一整瓶矿泉水（约 500-600ml）</b>还不换——这模拟的是「宝宝一整天尿都不换、还一次灌进去」的极端伪场景。</p>
-    <table data-page-node-id="MYTH_TB">
-      <tr data-page-node-id="MYTH_H"><th data-page-node-id="MYTH_H1">对比</th><th data-page-node-id="MYTH_H2">真实带娃</th><th data-page-node-id="MYTH_H3">自媒体倒水测评</th></tr>
-      <tr data-page-node-id="MYTH_R1"><td data-page-node-id="MYTH_C1">单片负荷</td><td data-page-node-id="MYTH_D1">单次 30-100ml；夜间长一点约 100-200ml</td><td data-page-node-id="MYTH_E1">一次性灌 500-1200ml</td></tr>
-      <tr data-page-node-id="MYTH_R2"><td data-page-node-id="MYTH_C2">更换节奏</td><td data-page-node-id="MYTH_D2">每 2-4 小时换，一天 6-15 次</td><td data-page-node-id="MYTH_E2">倒完不换，看"能撑多久"</td></tr>
-      <tr data-page-node-id="MYTH_R3"><td data-page-node-id="MYTH_C3">国标设计</td><td data-page-node-id="MYTH_D3" colspan="2">GB/T 28004.2-2021 吸收量要求仅 150-300ml，适配单次 30-80ml + 3-4 小时/片</td></tr>
+  <div class="sec full">
+    <div class="sec-title">吸量测评避坑：倒一整瓶水 ≠ 真实带娃</div>
+    <p class="note">不少测评博主往尿不湿里<b>一口气倒一整瓶矿泉水（约 500-600ml）</b>还不换——这模拟的是「宝宝一整天尿都不换、还一次灌进去」的极端伪场景。</p>
+    <table>
+      <tr><th>对比</th><th>真实带娃</th><th>自媒体倒水测评</th></tr>
+      <tr><td>单片负荷</td><td>单次 30-100ml；夜间长一点约 100-200ml</td><td>一次性灌 500-1200ml</td></tr>
+      <tr><td>更换节奏</td><td>每 2-4 小时换，一天 6-15 次</td><td>倒完不换，看"能撑多久"</td></tr>
+      <tr><td>国标设计</td><td colspan="2">GB/T 28004.2-2021 吸收量要求仅 150-300ml，适配单次 30-80ml + 3-4 小时/片</td></tr>
     </table>
-    <p class="note" data-page-node-id="MYTH_N2">国标吸收量要求才 150-300ml，因为<b>正常单片负荷远到不了 600ml</b>。能灌下一整瓶，只是实验室饱和上限，不是你会遇到的场景。</p>
-    <p class="note" data-page-node-id="MYTH_N3"><b>家长真正该看这 4 点：</b>① 单次尿后表层干不干爽（回渗低）② 起不起坨、断层 ③ 侧漏不漏 ④ 透气亲肤。这些才决定红屁屁，不是"能吸几瓶水"。</p>
-    <p class="src" data-page-node-id="MYTH_SRC">
-      <b data-page-node-id="MYTH_SB">国内来源：</b>民福康《宝宝纸尿裤多久换一次》（新生儿 2-3h、婴儿 3-4h）；三九益生通·张知新（白天 3-4h、夜间 4-6h）；复禾健康·周冬（2-4 小时）；中科佰测检测研究院（GB/T 28004.2-2021 吸收量 150-300ml、单次 30-80ml、3-4 小时/片）。
+    <p class="note">国标吸收量要求才 150-300ml，因为<b>正常单片负荷远到不了 600ml</b>。能灌下一整瓶，只是实验室饱和上限，不是你会遇到的场景。</p>
+    <p class="note"><b>家长真正该看这 4 点：</b>① 单次尿后表层干不干爽（回渗低）② 起不起坨、断层 ③ 侧漏不漏 ④ 透气亲肤。这些才决定红屁屁，不是"能吸几瓶水"。</p>
+    <p class="src">
+      <b>国内来源：</b>民福康《宝宝纸尿裤多久换一次》（新生儿 2-3h、婴儿 3-4h）；三九益生通·张知新（白天 3-4h、夜间 4-6h）；复禾健康·周冬（2-4 小时）；中科佰测检测研究院（GB/T 28004.2-2021 吸收量 150-300ml、单次 30-80ml、3-4 小时/片）。
     </p>
   </div>
 
-  <div class="sec" data-page-node-id="T7I7KsuSrVA5CMV9nQXYLH">
-    <div class="sec-title" data-page-node-id="IdVXaAN2huuvnUbGFITDJj">🌍 国际对照 · 双向证实（少尿警戒）</div>
-    <div class="intl" data-page-node-id="V8jR8o3PD41NZrNgLPsC59">
-      <div class="it" data-page-node-id="8PuceFjB8yKqM2eRtveOkR">
-        <b data-page-node-id="7taAQj8wANagOfNOXfbj8c">国内临床警戒：</b>多数三甲沿用 <b data-page-node-id="7uSCKbcnN5Fn9iRRN4XxyZ">&lt;1.0 mL/kg/h</b> 为"少尿"家长警戒信号（更宽松，便于日常观察）。<br data-page-node-id="zn7fN1E55kGiR3VzVOmsGj">
-        <b data-page-node-id="bqiF4SEV1my2FkIbIGK37x">国际 KDIGO 共识（2012 AKI 指南 + 新生儿改良版）：</b><b data-page-node-id="SF4JBO131l7X0BkRVk01da">&lt;0.5 mL/kg/h 持续 6–12h</b> 定为 AKI 1 期（更严格，用于临床分级）。<br data-page-node-id="t7Jszf0oYiMcDUZwYgktpw">
-        <b data-page-node-id="3bgGMjZ1DgaYyF4JSao52f">结论：</b>两者方向一致——低于正常下限即需关注，只是分级口径不同，不矛盾 ✅
+  <div class="sec full">
+    <div class="sec-title">🌍 国际对照 · 双向证实（少尿警戒）</div>
+    <div class="intl">
+      <div class="it">
+        <b>国内临床警戒：</b>多数三甲沿用 <b>&lt;1.0 mL/kg/h</b> 为"少尿"家长警戒信号（更宽松，便于日常观察）。<br>
+        <b>国际 KDIGO 共识（2012 AKI 指南 + 新生儿改良版）：</b><b>&lt;0.5 mL/kg/h 持续 6–12h</b> 定为 AKI 1 期（更严格，用于临床分级）。<br>
+        <b>结论：</b>两者方向一致——低于正常下限即需关注，只是分级口径不同，不矛盾 ✅
       </div>
     </div>
   </div>
 
-  <div class="sec" data-page-node-id="SRC_LIST">
-    <div class="sec-title" data-page-node-id="SRC_T">📚 数据来源清单（点击可查）</div>
-    <p class="note" data-page-node-id="SRC_N">上方每个数字都可在下面找到原始出处，欢迎自行核实。</p>
-
-    <div class="subhead" data-page-node-id="SRC_H1">国内来源（三甲平台 · 专家审阅）</div>
-    <div class="reflist" data-page-node-id="SRC_L1">
-      <div class="ref" data-page-node-id="R1"><span class="tag">国内</span>博禾医生《新生儿正常尿量是多少》<a href="https://www.bohe.cn/article/view/3pkyv6lw7komkbi.html" target="_blank" rel="noopener">bohe.cn/article/view/3pkyv6lw7komkbi.html</a></div>
-      <div class="ref" data-page-node-id="R2"><span class="tag">国内</span>民福康《新生儿尿量正常值》（张知新等三甲医师审阅）<a href="https://mip.mfk.com/article/12203411.shtml?site=toutiao" target="_blank" rel="noopener">mip.mfk.com/article/12203411.shtml</a></div>
-      <div class="ref" data-page-node-id="R3"><span class="tag">国内</span>民福康《新生儿尿量标准》（王昌燕·西电集团医院）<a href="https://mip.mfk.com/article/12203413.shtml" target="_blank" rel="noopener">mip.mfk.com/article/12203413.shtml</a></div>
-      <div class="ref" data-page-node-id="R4"><span class="tag">国内</span>民福康《急性肾损伤分期标准·KDIGO》（杨洁·北京积水潭医院）<a href="https://mip.mfk.com/ask/21018636.shtml" target="_blank" rel="noopener">mip.mfk.com/ask/21018636.shtml</a></div>
-      <div class="ref" data-page-node-id="R5"><span class="tag">国内</span>三知健康《新生儿5个小时没尿正常吗》（黄林晶·福建医大附一）<a href="https://m.3zhijk.com/kpar/mip/mip_article/7125162195949767680.html" target="_blank" rel="noopener">m.3zhijk.com/.../7125162195949767680.html</a></div>
-      <div class="ref" data-page-node-id="R6"><span class="tag">国内</span>百度健康《新生儿6个月尿量正常范围》（专家审阅）<a href="https://health.baidu.com/m/detail/ar_6157116172197923553" target="_blank" rel="noopener">health.baidu.com/m/detail/ar_6157116172197923553</a></div>
-      <div class="ref" data-page-node-id="R7"><span class="tag">国内</span>百度健康《六个月宝宝尿少正常吗》（王成明·江苏省人民医院审阅）<a href="https://health.baidu.com/m/detail/ar_6544828341917609823" target="_blank" rel="noopener">health.baidu.com/m/detail/ar_6544828341917609823</a></div>
-      <div class="ref" data-page-node-id="R8"><span class="tag">国内</span>丁香医生（母婴健康科普平台）<a href="https://dxy.com" target="_blank" rel="noopener">dxy.com</a></div>
-      <div class="ref" data-page-node-id="R9"><span class="tag">国内</span>广州市妇女儿童医疗中心（三九健康平台）<a href="https://www.39.net" target="_blank" rel="noopener">39.net</a></div>
-      <div class="ref" data-page-node-id="R10"><span class="tag">国内</span>民福康《宝宝纸尿裤多久换一次》（2-3 小时/新生儿、3-4 小时/婴儿）<a href="https://m.mfk.com/article/15879938.shtml" target="_blank" rel="noopener">m.mfk.com/article/15879938.shtml</a></div>
-      <div class="ref" data-page-node-id="R11"><span class="tag">国内</span>三九益生通·张知新《尿不湿一般多久换一次》（白天 3-4h、夜间 4-6h）<a href="https://www.39yst.com/ask/5623923.shtml" target="_blank" rel="noopener">39yst.com/ask/5623923.shtml</a></div>
-      <div class="ref" data-page-node-id="R12"><span class="tag">国内</span>复禾健康·周冬《宝宝尿不湿多久换一次合适》（2-4 小时）<a href="https://m.fh21.com.cn/article/view/2078528.html" target="_blank" rel="noopener">m.fh21.com.cn/article/view/2078528.html</a></div>
-      <div class="ref" data-page-node-id="R13"><span class="tag">国内</span>中科佰测检测技术研究院《婴儿纸尿裤》（GB/T 28004.2-2021 吸收量 150-300ml、单次 30-80ml、3-4 小时/片）<a href="https://www.cas-bc.com/products_details/930.html" target="_blank" rel="noopener">cas-bc.com/products_details/930.html</a></div>
-    </div>
-
-    <div class="subhead" data-page-node-id="SRC_H2">国际来源（权威机构 · 教材/指南）</div>
-    <div class="reflist" data-page-node-id="SRC_L2">
-      <div class="ref" data-page-node-id="I1"><span class="tag tag-i">国际</span>StatPearls《Fluid Management》（美国国立医学图书馆 NCBI 收录）<a href="https://www.statpearls.com/point-of-care/21836" target="_blank" rel="noopener">statpearls.com/point-of-care/21836</a></div>
-      <div class="ref" data-page-node-id="I2"><span class="tag tag-i">国际</span>Frontiers in Pediatrics《Neonatal Acute Kidney Injury》(KDIGO 新生儿改良版)<a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.842544/full" target="_blank" rel="noopener">frontiersin.org/.../fped.2022.842544/full</a></div>
-      <div class="ref" data-page-node-id="I3"><span class="tag tag-i">国际</span>香港卫生署《母乳餵哺 - 新生嬰兒篇》（第5天起每天5-6块相当重湿尿片）<a href="https://www.fhs.gov.hk/sc_chi/health_info/child/12172.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/health_info/child/12172.html</a></div>
-      <div class="ref" data-page-node-id="I4"><span class="tag tag-i">国际</span>香港卫生署《吃得够吗?》（母乳喂养评估）<a href="https://www.fhs.gov.hk/sc_chi/mulit_med/breastfeeding/bf_vid_c6p5.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/mulit_med/breastfeeding/bf_vid_c6p5.html</a></div>
-      <div class="ref" data-page-node-id="I5"><span class="tag tag-i">国际</span>香港卫生署《实用喂哺小贴士》（逐日湿尿片数量表）<a href="https://www.fhs.gov.hk/sc_chi//breastfeeding/30172.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/breastfeeding/30172.html</a></div>
-      <div class="ref" data-page-node-id="I6"><span class="tag tag-i">国际</span>KDIGO 2012 急性肾损伤（AKI）临床实践指南<a href="https://kdigo.org/guidelines/acute-kidney-injury/" target="_blank" rel="noopener">kdigo.org/guidelines/acute-kidney-injury</a></div>
-      <div class="ref" data-page-node-id="I7"><span class="tag tag-i">国际</span>Fuhrman &amp; Zimmerman《Pediatric Critical Care》（儿科重症医学教材，正常水合婴儿 ≥1.5–2.0 mL/kg/h；无单一公开网页）</div>
-      <div class="ref" data-page-node-id="I8"><span class="tag tag-i">国际</span>美国儿科学会 AAP《Caring for Your Baby and Young Child》：普通新生儿白天 2-3 小时更换、夜间可延长至 4 小时（三九·贺娟引述；书籍引用，无单一公开网页）</div>
+  <div class="sec full">
+    <div class="sec-title">📚 数据来源清单（点击可查）</div>
+    <p class="note">上方每个数字都可在下面找到原始出处，欢迎自行核实。</p>
+    <div class="srccols">
+      <div class="srccol">
+        <div class="subhead">国内来源（三甲平台 · 专家审阅）</div>
+        <div class="reflist">
+          <div class="ref"><span class="tag">国内</span>博禾医生《新生儿正常尿量是多少》<a href="https://www.bohe.cn/article/view/3pkyv6lw7komkbi.html" target="_blank" rel="noopener">bohe.cn/article/view/3pkyv6lw7komkbi.html</a></div>
+          <div class="ref"><span class="tag">国内</span>民福康《新生儿尿量正常值》（张知新等三甲医师审阅）<a href="https://mip.mfk.com/article/12203411.shtml?site=toutiao" target="_blank" rel="noopener">mip.mfk.com/article/12203411.shtml</a></div>
+          <div class="ref"><span class="tag">国内</span>民福康《新生儿尿量标准》（王昌燕·西电集团医院）<a href="https://mip.mfk.com/article/12203413.shtml" target="_blank" rel="noopener">mip.mfk.com/article/12203413.shtml</a></div>
+          <div class="ref"><span class="tag">国内</span>民福康《急性肾损伤分期标准·KDIGO》（杨洁·北京积水潭医院）<a href="https://mip.mfk.com/ask/21018636.shtml" target="_blank" rel="noopener">mip.mfk.com/ask/21018636.shtml</a></div>
+          <div class="ref"><span class="tag">国内</span>三知健康《新生儿5个小时没尿正常吗》（黄林晶·福建医大附一）<a href="https://m.3zhijk.com/kpar/mip/mip_article/7125162195949767680.html" target="_blank" rel="noopener">m.3zhijk.com/.../7125162195949767680.html</a></div>
+          <div class="ref"><span class="tag">国内</span>百度健康《新生儿6个月尿量正常范围》（专家审阅）<a href="https://health.baidu.com/m/detail/ar_6157116172197923553" target="_blank" rel="noopener">health.baidu.com/m/detail/ar_6157116172197923553</a></div>
+          <div class="ref"><span class="tag">国内</span>百度健康《六个月宝宝尿少正常吗》（王成明·江苏省人民医院审阅）<a href="https://health.baidu.com/m/detail/ar_6544828341917609823" target="_blank" rel="noopener">health.baidu.com/m/detail/ar_6544828341917609823</a></div>
+          <div class="ref"><span class="tag">国内</span>丁香医生（母婴健康科普平台）<a href="https://dxy.com" target="_blank" rel="noopener">dxy.com</a></div>
+          <div class="ref"><span class="tag">国内</span>广州市妇女儿童医疗中心（三九健康平台）<a href="https://www.39.net" target="_blank" rel="noopener">39.net</a></div>
+          <div class="ref"><span class="tag">国内</span>民福康《宝宝纸尿裤多久换一次》（2-3 小时/新生儿、3-4 小时/婴儿）<a href="https://m.mfk.com/article/15879938.shtml" target="_blank" rel="noopener">m.mfk.com/article/15879938.shtml</a></div>
+          <div class="ref"><span class="tag">国内</span>三九益生通·张知新《尿不湿一般多久换一次》（白天 3-4h、夜间 4-6h）<a href="https://www.39yst.com/ask/5623923.shtml" target="_blank" rel="noopener">39yst.com/ask/5623923.shtml</a></div>
+          <div class="ref"><span class="tag">国内</span>复禾健康·周冬《宝宝尿不湿多久换一次合适》（2-4 小时）<a href="https://m.fh21.com.cn/article/view/2078528.html" target="_blank" rel="noopener">m.fh21.com.cn/article/view/2078528.html</a></div>
+          <div class="ref"><span class="tag">国内</span>中科佰测检测技术研究院《婴儿纸尿裤》（GB/T 28004.2-2021 吸收量 150-300ml、单次 30-80ml、3-4 小时/片）<a href="https://www.cas-bc.com/products_details/930.html" target="_blank" rel="noopener">cas-bc.com/products_details/930.html</a></div>
+        </div>
+      </div>
+      <div class="srccol">
+        <div class="subhead">国际来源（权威机构 · 教材/指南）</div>
+        <div class="reflist">
+          <div class="ref"><span class="tag tag-i">国际</span>StatPearls《Fluid Management》（美国国立医学图书馆 NCBI 收录）<a href="https://www.statpearls.com/point-of-care/21836" target="_blank" rel="noopener">statpearls.com/point-of-care/21836</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>Frontiers in Pediatrics《Neonatal Acute Kidney Injury》(KDIGO 新生儿改良版)<a href="https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2022.842544/full" target="_blank" rel="noopener">frontiersin.org/.../fped.2022.842544/full</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>香港卫生署《母乳餵哺 - 新生嬰兒篇》（第5天起每天5-6块相当重湿尿片）<a href="https://www.fhs.gov.hk/sc_chi/health_info/child/12172.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/health_info/child/12172.html</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>香港卫生署《吃得够吗?》（母乳喂养评估）<a href="https://www.fhs.gov.hk/sc_chi/mulit_med/breastfeeding/bf_vid_c6p5.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/mulit_med/breastfeeding/bf_vid_c6p5.html</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>香港卫生署《实用喂哺小贴士》（逐日湿尿片数量表）<a href="https://www.fhs.gov.hk/sc_chi//breastfeeding/30172.html" target="_blank" rel="noopener">fhs.gov.hk/sc_chi/breastfeeding/30172.html</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>KDIGO 2012 急性肾损伤（AKI）临床实践指南<a href="https://kdigo.org/guidelines/acute-kidney-injury/" target="_blank" rel="noopener">kdigo.org/guidelines/acute-kidney-injury</a></div>
+          <div class="ref"><span class="tag tag-i">国际</span>Fuhrman &amp; Zimmerman《Pediatric Critical Care》（儿科重症医学教材，正常水合婴儿 ≥1.5–2.0 mL/kg/h；无单一公开网页）</div>
+          <div class="ref"><span class="tag tag-i">国际</span>美国儿科学会 AAP《Caring for Your Baby and Young Child》：普通新生儿白天 2-3 小时更换、夜间可延长至 4 小时（三九·贺娟引述；书籍引用，无单一公开网页）</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="foot" data-page-node-id="EzIEGc4De1smCui4qDK0ut">
-    <b data-page-node-id="eVyxqfddp1GJH6yT3CSctX">警报：</b>24h 尿量 &lt;400ml、&gt;6h 无尿、尿色深茶/酱油且拒奶精神差发热 → 及时就医。<br data-page-node-id="VVhKJAC2bXwcuDS2GdCuwE">
-    <b data-page-node-id="DISC">免责：</b>本卡仅作科普参考，不替代专业医疗诊断；数据以原始来源为准，链接如有更新请按机构官网查询。
+  <div class="foot">
+    <b>警报：</b>24h 尿量 &lt;400ml、&gt;6h 无尿、尿色深茶/酱油且拒奶精神差发热 → 及时就医。<br>
+    <b>免责：</b>本卡仅作科普参考，不替代专业医疗诊断；数据以原始来源为准，链接如有更新请按机构官网查询。
   </div>
 </div>
 </body>
